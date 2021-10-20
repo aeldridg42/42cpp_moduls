@@ -1,0 +1,5 @@
+You are allowed to use basically everything in the standard library. HOWEVER, it would be smart to try and use the C++-ish versions of the functions
+you are used to in C, instead of just keeping to what you know, this is a
+new language after all. And NO, you are not allowed to use the STL until
+you actually are supposed to (that is, until module 08). That means no vectors/lists/maps/etc... or anything that requires an include <algorithm> until
+then.
