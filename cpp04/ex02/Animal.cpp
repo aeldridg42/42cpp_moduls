@@ -22,7 +22,3 @@ Animal & Animal::operator= ( const Animal & src ) {
 	    this->type = src.type;
 	return *this;
 }
-
-void Animal::makeSound() {
-	std::cout << "random Animal sound" << std::endl;
-}

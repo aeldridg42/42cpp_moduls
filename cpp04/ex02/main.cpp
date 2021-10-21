@@ -2,6 +2,7 @@
 #include "Cat.hpp"
 
 int main() {
+    // Animal test;
 	int size = 10;
 	{
 		Animal* arr[size];
@@ -41,5 +42,5 @@ int main() {
         }
         std::cout << std::endl << check.getIdea(5) << std::endl;
     }
-	while (1);
+	// while (1);
 }

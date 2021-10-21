@@ -14,7 +14,7 @@ public:
 	Animal( std::string tp );
 	virtual ~Animal();
 	Animal & operator= ( const Animal & src );
-	virtual void makeSound();
+	virtual void makeSound() = 0;
 };
 
 #endif
