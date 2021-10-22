@@ -2,7 +2,7 @@ SRCS	=	Animal.cpp Cat.cpp Dog.cpp Brain.cpp main.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-NAME	=	ex01
+NAME	=	ex02
 
 INCL	=	Animal.hpp Cat.hpp Dog.hpp Brain.hpp
 

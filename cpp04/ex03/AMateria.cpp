@@ -17,7 +17,7 @@ AMateria::AMateria( const AMateria & src ) {
 }
 
 AMateria & AMateria::operator= ( const AMateria & src ) {
-	if (this->_type == src._type && this != &src) {
+	if (this != &src) {
 		this->_type = src._type;
 	}
 	return *this;
