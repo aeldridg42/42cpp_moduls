@@ -1,39 +1,31 @@
-NAME = a.out
-SRCS = main.cpp
-SRCS += AMateria.cpp
-SRCS += Character.cpp
-SRCS += Cure.cpp
-SRCS += Ice.cpp
-SRCS += MateriaSource.cpp
+SRCS	=	AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 
-OBJS = $(SRCS:%.cpp=%.o)
+OBJS	=	$(SRCS:.cpp=.o)
 
-CXX = clang++
-ifdef debug
-CXX = g++
-endif
+NAME	=	ex03
 
-CXXFLAGS = -Wall -Wextra -Werror -g
-ifdef sanitize
-CXXFLAGS += -fsanitize=address
-endif
+INCL	=	AMateria.hpp Character.hpp Cure.hpp Ice.hpp ICharacter.hpp IMateriaSource.hpp MateriaSource.hpp
 
-all: $(NAME)
+CFLAGS	=	-Wall -Wextra -Werror
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+CC		=	clang++
+
+STD		=	-std=c++98
+
+all:		$(NAME)
+
+$(NAME):	$(OBJS)
+			$(CC) $(STD) $(OBJS) $(CFLAGS) -o $(NAME)
+
+%.o: %.cpp	$(INCL)
+			$(CC) $(STD) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJS)
+			${RM} ${OBJS}
 
-fclean: clean
-	rm -rf $(NAME)
+fclean:		clean
+			${RM} ${NAME}
 
-re: fclean all
+re:			fclean all
 
-execute:
-	./$(NAME)
-
-test: all execute fclean
-
-.PHONY: all clean fclean re test execute
+.PHONY:		all clean fclean re
