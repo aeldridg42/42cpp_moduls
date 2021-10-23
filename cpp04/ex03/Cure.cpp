@@ -4,10 +4,6 @@ Cure::Cure() : AMateria("cure") {
 
 }
 
-Cure::~Cure() {
-
-}
-
 Cure::Cure( const Cure & src ) {
 	*this = src;
 }

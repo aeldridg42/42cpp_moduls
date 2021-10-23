@@ -4,10 +4,6 @@ AMateria::AMateria() : _type("default") {
 
 }
 
-AMateria::~AMateria() {
-
-}
-
 AMateria::AMateria( std::string const & type ) : _type(type) {
 
 }

@@ -6,7 +6,9 @@ Character::Character() : name("default") {
 }
 
 Character::~Character() {
-
+    for (int i = 0; i < 4; i++)
+        if (this->materias[i])
+            delete this->materias[i];
 }
 
 Character::Character( std::string _name ) : name(_name) {
@@ -19,7 +21,17 @@ Character::Character( const Character & src ) {
 }
 
 Character & Character::operator= ( const Character & src ) {
-    this->name = src.name;
+    if (this != &src) {
+        this->name = src.name;
+        for (int i = 0; i < 4; i++) {
+            if (this->materias[i])
+                delete this->materias[i];
+            if (src.materias[i])
+                this->materias[i] = src.materias[i]->clone();
+            else
+                this->materias[i] = NULL;
+        }
+    }
     return *this;
 }
 

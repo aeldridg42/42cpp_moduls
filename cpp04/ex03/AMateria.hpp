@@ -14,7 +14,7 @@ protected:
 
 public:
 	AMateria();
-	virtual ~AMateria();
+	virtual ~AMateria() {}
 	AMateria( const AMateria & src );
 	AMateria( std::string const & type );
 	AMateria & operator= ( const AMateria & src );
