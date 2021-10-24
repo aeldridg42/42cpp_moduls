@@ -18,10 +18,9 @@ MateriaSource::MateriaSource( const MateriaSource & src ) {
 MateriaSource & MateriaSource::operator= ( const MateriaSource & src ) {
     if (this != &src) {
         for (int i = 0; i < 4; i++) {
-            if (this->materias[i]) {
+            if (this->materias[i])
                 delete this->materias[i];
-                this->materias[i] = src.materias[i]->clone();
-            }
+            this->materias[i] = src.materias[i]->clone();
         }
     }
     return *this;
