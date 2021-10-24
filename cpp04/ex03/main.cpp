@@ -25,9 +25,4 @@ int main()
     me->use(1, *bob);
 
     std::cout << "----------------------------------" << std::endl;
-
-    me->use(3, *bob);
-    me->unequip(3);
-    me->unequip(0);
-    me->use(0, *bob);
 }
