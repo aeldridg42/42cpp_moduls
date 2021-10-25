@@ -2,7 +2,7 @@ SRCS	=	main.cpp Bureaucrat.cpp Form.cpp RobotomyRequestForm.cpp ShrubberyCreatio
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-NAME	=	ex02
+NAME	=	ex03
 
 INCL	=	Bureaucrat.hpp Form.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp Intern.hpp
 
