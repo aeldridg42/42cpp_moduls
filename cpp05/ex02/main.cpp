@@ -27,12 +27,12 @@ int main() {
                 d.execute(a);
             }
             catch (const std::exception & e) {
-                std::cout << e.what() << std::endl;
+                std::cerr << e.what() << std::endl;
             }
             
         }
         catch (const std::exception & e) {
-            std::cout << e.what() << std::endl;
+            std::cerr << e.what() << std::endl;
         }
     }
     std::cout << std::endl << "error tests:" << std::endl << std::endl;
@@ -47,11 +47,11 @@ int main() {
                 std::cout << "sadasdasda" << std::endl;
             }
             catch (const std::exception & e) {
-                std::cout << e.what() << std::endl;
+                std::cerr << e.what() << std::endl;
             }
         }
         catch (const std::exception & e ) {
-            std::cout << e.what() << std::endl;
+            std::cerr << e.what() << std::endl;
         }
         std::cout << std::endl << "____________________________________" << std::endl;
         try {
@@ -62,11 +62,11 @@ int main() {
                 std::cout << "sadasdasda" << std::endl;
             }
             catch (const std::exception & e) {
-                std::cout << e.what() << std::endl;
+                std::cerr << e.what() << std::endl;
             }
         }
         catch (const std::exception & e ) {
-            std::cout << e.what() << std::endl;
+            std::cerr << e.what() << std::endl;
         }
     }
 }

@@ -14,13 +14,13 @@ int main() {
                 b.beSigned(a);
             }
             catch (const std::exception & e) {
-                std::cout << e.what() << std::endl;
+                std::cerr << e.what() << std::endl;
             }
             std::cout << std::endl;
             std::cout << b << std::endl;
         }
         catch (const std::exception & e ) {
-            std::cout << e.what() << std::endl;
+            std::cerr << e.what() << std::endl;
         }
     }
     std::cout << std::endl << "error tests:" << std::endl << std::endl;
@@ -31,7 +31,7 @@ int main() {
             std::cout << a << std::endl;
         }
         catch (const std::exception & e) {
-            std::cout << e.what() << std::endl << std::endl;
+            std::cerr << e.what() << std::endl << std::endl;
         }
         std::cout << "______________________________" << std::endl << std::endl;
         try {
@@ -45,13 +45,13 @@ int main() {
                 b.beSigned(a);
             }
             catch (const std::exception & e) {
-                std::cout << e.what() << std::endl;
+                std::cerr << e.what() << std::endl;
             }
             std::cout << std::endl;
             std::cout << b << std::endl;
         }
         catch (const std::exception & e ) {
-            std::cout << e.what() << std::endl;
+            std::cerr << e.what() << std::endl;
         }
 
     }

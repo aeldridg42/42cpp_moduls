@@ -62,7 +62,7 @@ void Bureaucrat::signForm( const Form & src ) {
     if (this->grade <= src.getGradeToSign())
         std::cout << this->name << " signs " << src.getName() << std::endl;
     else {
-        std::cout << this->name << " cannot sign " << src.getName() << " because ";
+        std::cerr << this->name << " cannot sign " << src.getName() << " because ";
         throw GradeTooLowException();
     }
 }
