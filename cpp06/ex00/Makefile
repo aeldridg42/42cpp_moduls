@@ -1,4 +1,4 @@
-SRCS	=	main.cpp conversion.cpp
+SRCS	=	main.cpp conversion.cpp typeFind.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 

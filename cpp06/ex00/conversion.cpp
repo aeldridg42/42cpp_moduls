@@ -1,5 +1,7 @@
 #include "conversion.hpp"
 
+bool ((*g_arr[5]))(char *arg) = {isChar, isInt, isFloat, isDouble, isSymbs};
+
 void	toChar(double value)
 {
 	std::cout << "char: ";
@@ -31,17 +33,29 @@ void	toFloat(double value)
 void	toDouble(double value)
 {
 	std::cout << "double: ";
-	std::cout << std::fixed << std::setprecision(1) << static_cast<double>(value) << std::endl;
+	std::cout << std::fixed << std::setprecision(1) << value << std::endl;
+}
+
+void	impossible( void ) {
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+	std::cout << "float: impossible" << std::endl;
+	std::cout << "double: impossible" << std::endl;
+	exit(1);
 }
 
 void	stringConversion(char *argv)
 {
-	double value;
+	int i;
+	double value = 0.0;
 	char *pEnd;
-	if (strlen(argv) == 1 && !std::isdigit(*argv))
+	for (i = 0; i < 5 && !g_arr[i](argv); i++);
+	if (i == 0)
 		value = static_cast<double>(*argv);
-	else
+	else if (i < 5)
 		value = strtod(argv, &pEnd);
+	else
+		impossible();
 	toChar(value);
 	toInt(value);
 	toFloat(value);
