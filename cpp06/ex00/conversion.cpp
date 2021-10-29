@@ -38,7 +38,10 @@ void	stringConversion(char *argv)
 {
 	double value;
 	char *pEnd;
-	value = strlen(argv) != 1 ? strtod(argv, &pEnd) : *argv;
+	if (strlen(argv) == 1 && !std::isdigit(*argv))
+		value = static_cast<double>(*argv);
+	else
+		value = strtod(argv, &pEnd);
 	toChar(value);
 	toInt(value);
 	toFloat(value);
