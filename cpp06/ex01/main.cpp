@@ -22,5 +22,7 @@ int main() {
 
     std::cout << &data << std::endl;
     std::cout << &check1 << std::endl;
-    std::cout << check2 << std::endl;
+    std::cout << check2 << std::endl << std::endl;
+
+    std::cout << check2->str << std::endl;
 }
