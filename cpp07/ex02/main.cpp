@@ -1,6 +1,6 @@
 #include "Array.hpp"
 
-#define MAX_VAL 750
+#define MAX_VAL 5
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -16,6 +16,7 @@ int main(int, char**)
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
+        Array<int> tmp2(0);
     }
 
     for (int i = 0; i < MAX_VAL; i++)
@@ -26,6 +27,7 @@ int main(int, char**)
             return 1;
         }
     }
+    std::cout << "values are same!" << std::endl;
     try
     {
         numbers[-2] = 0;

@@ -12,21 +12,38 @@ private:
     unsigned int _size;
 
 public:
-    Array() : _size(0) { elements = new T[0]; }
-    Array( unsigned int n ) : _size(n) { elements = new T[n]; }
-    virtual ~Array() { delete[] elements; }
-    Array( const Array & src ) { elements = new T(src.size()); }
-    Array & operator= ( const Array & src ) {
-        if (this != &src) 
-            return Array(src);
-        return *this;
+    Array() : _size(0) , elements(NULL) { }
+    Array( unsigned int n ) : elements(NULL), _size(n) { 
+        if (n)
+            elements = new T[n];
+    }
+    virtual ~Array() {
+        if (_size)
+            delete[] this->elements;
     }
     T & operator[] ( const unsigned int index ) {
         if (index >= _size)
             throw std::exception();
         return elements[index];
     }
+    Array( const Array & src ) : elements(NULL), _size(0) { *this = src; }
+    Array & operator= ( const Array & src ) {
+        if (this != &src) {
+            if (this->_size)
+                delete[] this->elements;
+            this->elements = NULL;
+            this->_size = 0;
+            if (src.size()) {
+                this->_size = src.size();
+                this->elements = new T[this->_size];
+                for (int i = 0; i < (int)this->_size ; i++)
+                    this->elements[i] = src.get(i);
+            }
+        }
+        return *this;
+    }
     int size() const { return this->_size; }
+    T & get(int i) const { return elements[i]; }
 };
 
 #endif

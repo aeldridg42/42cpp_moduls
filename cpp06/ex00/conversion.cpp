@@ -1,14 +1,12 @@
 #include "conversion.hpp"
 
-bool ((*g_arr[5]))(char *arg) = {isChar, isInt, isFloat, isDouble, isSymbs};
-
 void	toChar(double value)
 {
 	std::cout << "char: ";
 
 	if (value >= 32 && value <= 126)
 		std::cout << "\'" << static_cast<char>(value) << "\'" << std::endl;
-	else if (value < 0 || value > 127 || std::isnan(value))
+	else if (value < 0 || value > 127 || isnan(value))
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << "Non displayable" << std::endl;
@@ -49,7 +47,9 @@ void	stringConversion(char *argv)
 	int i;
 	double value = 0.0;
 	char *pEnd;
-	for (i = 0; i < 5 && !g_arr[i](argv); i++);
+    bool ((*funcs[5]))(char *arg) = {isChar, isInt, isFloat, isDouble, isSymbs};
+
+	for (i = 0; i < 5 && !funcs[i](argv); i++);
 	if (i == 0)
 		value = static_cast<double>(*argv);
 	else if (i < 5)
